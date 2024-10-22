@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Preview Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .product-preview {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        .product-title {
+            margin: 15px 0 5px;
+            font-size: 24px;
+        }
+
+        .product-price {
+            color: #28a745;
+            font-size: 20px;
+        }
+
+        .details-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-details {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-preview">
+        <img src="necklace.jpeg" alt="Product Image" class="product-image">
+        <h2 class="product-title">Diamond necklace</h2>
+        <p class="product-price">Rs.1500000</p>
+        <button id="toggle-details" class="details-button">Show Details</button>
+        <div id="product-details" class="product-details hidden">
+            <p>These bright earrings and necklace in diamonds crafted into rose gold in a trellis design, adds elegance to any ensemble.</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('toggle-details').addEventListener('click', function() {
+            const details = document.getElementById('product-details');
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                this.textContent = 'Hide Details';
+            } else {
+                details.classList.add('hidden');
+                this.textContent = 'Show Details';
+            }
+        });
+    </script>
+</body>
+</html>
